@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/utilities.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <div class="form-container">
+        <label for="restoName">Restaurant Name:</label>
+        <input type="text" id="restoName" placeholder="Enter Restaurant Name" required><br><br>
+
+        <label for="rate">Rate:</label>
+        <input type="text" id="rate" placeholder="Enter Rate" required><br><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter Location" required><br><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" placeholder="Enter Category" required><br><br>
+
+        <label for="restoImage">Restaurant Image</label>
+        <input type="file" id="restoImage" required><br><br>
+
+        <button class="btn" id="addRestaurantBtn">Add Restaurant</button>
+    </div>
+
+    <div class="admin-restaurants" id="adminRestaurantCards">
+        <!-- Admin restaurant cards will be added here -->
+    </div>
+
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>

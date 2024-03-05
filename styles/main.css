@@ -118,14 +118,15 @@ main h1 {
   padding: 50px 0 30px 0;
 }
 
-.restaurants-cards {
+.restaurants-cards,
+.admin-restaurants {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .card {
-  width: calc(33.33% - 20px);
+  width: 30%;
   margin: 10px;
   padding: 20px;
   background-color: #f9f9f9;
