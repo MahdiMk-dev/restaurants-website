@@ -5,7 +5,7 @@ function saveRestaurants() {
 }
 
 function renderAdminRestaurants() {
-  const restaurantCardsContainer = document.getElementById('adminRestaurantCards');
+  const restaurantCardsContainer = document.getElementById('restaurantCards');
   if (!restaurantCardsContainer) {
     console.error('adminRestaurantCards container not found!');
     return;
@@ -80,7 +80,7 @@ function removeRestaurant(id) {
   saveRestaurants();
 }
 
-const addRestaurantBtn = document.getElementById('addRestaurantBtn');
+const addRestaurantBtn = document.getElementById("addRestaurantBtn");
 if (addRestaurantBtn) {
   addRestaurantBtn.addEventListener('click', addRestaurant);
 } else {
