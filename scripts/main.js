@@ -45,18 +45,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function displayRestaurants(restaurants) {
-      const restaurantListContainer = document.getElementById('restaurantCards');
-      restaurantListContainer.innerHTML = '';
-
-      if (restaurants.length === 0) {
-          restaurantListContainer.innerHTML = '<p>No matching restaurants found.</p>';
-      } else {
-          restaurants.forEach(function (restaurant) {
-              const restaurantItem = document.createElement('div');
-              restaurantItem.textContent = `${restaurant.name} - ${restaurant.location} - ${restaurant.category}`;
-              restaurantListContainer.appendChild(restaurantItem);
-          });
-      }
+    const restaurantListContainer = document.getElementById('restaurantCards');
+    restaurantListContainer.innerHTML = '';
+    if (restaurants.length === 0) {
+        restaurantListContainer.innerHTML = '<p>No matching restaurants found.</p>';
+    } else {
+        restaurants.forEach(restaurant => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+          <a href="#">
+            <img src="${restaurant.image}" alt="${restaurant.name}" />
+            <div class="card-info">
+              <div class="head">
+                <h3>${restaurant.name}</h3>
+                <p class="rate">${restaurant.rate} <i class="fa-regular fa-star"></i></p>
+              </div>
+              <p>${restaurant.location}</p>
+              <p>${restaurant.category}</p>
+            </div>
+          </a>
+        `;
+        restaurantListContainer.appendChild(card);
+      });
+  }
   }
 
   const mainRestaurantCardsContainer = document.getElementById('restaurantCards');
@@ -89,11 +101,29 @@ document.addEventListener('DOMContentLoaded', function () {
           mainRestaurantCardsContainer.appendChild(card);
       });
   }
-
+  restaurants.forEach(restaurant => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <a href="#">
+        <img src="${restaurant.image}" alt="${restaurant.name}" />
+        <div class="card-info">
+          <div class="head">
+            <h3>${restaurant.name}</h3>
+            <p class="rate">${restaurant.rate} <i class="fa-regular fa-star"></i></p>
+          </div>
+          <p>${restaurant.location}</p>
+          <p>${restaurant.category}</p>
+        </div>
+      </a>
+    `;
+    restaurantCardsContainer.appendChild(card);
+  });
+});
   // Call the render function initially
   renderMainRestaurants();
 
   // You can add more functionality or event listeners related to the main page if needed
-});
+
 
 //    // <script src="../scripts/admin.js"></script>
