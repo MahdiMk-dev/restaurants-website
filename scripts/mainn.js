@@ -2,17 +2,73 @@ document.addEventListener('DOMContentLoaded', function () {
 let restaurants=[]
 function loadRestaurants(){
 const restaurantsJson = localStorage.getItem('restaurants');
+console.log(restaurantsJson)
 if (restaurantsJson) {
   const restaurants = JSON.parse(restaurantsJson);
+  console.log(restaurants)
 }
 else
 restaurants=[]
 restaurants;
 }
-    // Add event listeners to filters
-    locationSelect.addEventListener('change', renderRestaurants);
-    categorySelect.addEventListener('change', renderRestaurants);
+ //console.log(restaurants)
 
+  // Function to search for a restaurant by name
+  function searchAllAttributes(searchTerm) {
+    console.log(searchTerm)
+    const restaurants = JSON.parse(localStorage.getItem('restaurants')) || [];
+    const results = [];
+    restaurants.forEach(restaurant => {
+      // Check each attribute of the restaurant
+      for (const key in restaurant) {
+        if (Object.hasOwnProperty.call(restaurant, key)) {
+          if(key!='image'){
+          const value = restaurant[key];
+          if (typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())) {
+            results.push(restaurant);
+            break; // Break out of loop once a match is found for this restaurant
+          }
+        }
+        }
+      }
+    });
+
+    console.log('search')
+    console.log(results)
+    return results;
+
+  }
+ // console.log('bla')
+ //console.log(searchAllAttributes('bla'))
+  // Function to display search results
+  function displaySearchResults(searchResults) {
+    const restaurants = searchResults
+    console.log(restaurants)
+      const restaurantListContainer = document.getElementById('restaurantCards');
+      restaurantListContainer.innerHTML = '';
+      if (restaurants.length === 0) {
+          restaurantListContainer.innerHTML = '<p>No matching restaurants found.</p>';
+      } else {
+          restaurants.forEach(restaurant => {
+          const card = document.createElement('div');
+          card.classList.add('card');
+          card.innerHTML = `
+          <a href="./single-restaurant.html?id=${restaurant.id}">
+              <img src="${restaurant.image}" alt="${restaurant.name}" />
+              <div class="card-info">
+                <div class="head">
+                  <h3>${restaurant.name}</h3>
+                  <p class="rate">${restaurant.rate} <i class="fa-regular fa-star"></i></p>
+                </div>
+                <p>${restaurant.location}</p>
+                <p>${restaurant.category}</p>
+              </div>
+            </a>
+          `;
+          restaurantListContainer.appendChild(card);
+        });
+    }
+  }
   
   // Add event listener to search input
 const searchInput = document.getElementById('search');
@@ -34,93 +90,20 @@ searchInput.addEventListener('input', function(event) {
     const searchTerm = event.target.value.trim();
     console.log(searchTerm); 
     if (searchTerm.length > 0) {
-renderRestaurants()
-    } 
+    const searchResults = searchAllAttributes(searchTerm);
+    displaySearchResults(searchResults);
+    } else {
+      // Clear search results if search input is empty
+      displayRestaurants()
+   }
   }
 });
 
-// Function to render restaurants based on selected location
-function renderRestaurants( ) {
-   const restaurants = JSON.parse(localStorage.getItem('restaurants')) || [];
-    console.log('load')
-  console.log(restaurants)
-  results=[]
-  res=[]
-    const selectedLocation = locationSelect.value;
-  const selectedCategory = categorySelect.value;
-  const searchQuery = search.value.toLowerCase();
-  const restaurantsContainer = document.getElementById('restaurantCards');
-  restaurantsContainer.innerHTML = ''; // Clear previous content
-  
-  restaurants.forEach(restaurant => {
-    if ((selectedLocation === 'All Locations' || restaurant.location === selectedLocation) &&
-        (selectedCategory === 'All Categories' || restaurant.category === selectedCategory)) {
-      results.push(restaurant)
-    }
-  });
-
-  res=searchAllAttributes(results,searchQuery)
-  displaySearchResults(res)
-
-}
-
-  // Function to search for a restaurant by name
-  function searchAllAttributes(rest,searchTerm) {
-    const results = [];
-    rest.forEach(restaurant => {
-      // Check each attribute of the restaurant
-      for (const key in restaurant) {
-        if (Object.hasOwnProperty.call(restaurant, key)) {
-          if(key!='image'){
-          const value = restaurant[key];
-          if (typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())) {
-            results.push(restaurant);
-            break; // Break out of loop once a match is found for this restaurant
-          }
-        }
-        }
-      }
-    });
-
-
-    return results;
-
-  }
-
-  // Function to display search results
-  function displaySearchResults(searchResults) {
-    const restaurants = searchResults
-      const restaurantListContainer = document.getElementById('restaurantCards');
-      restaurantListContainer.innerHTML = '';
-      if (restaurants.length === 0) {
-          restaurantListContainer.innerHTML = '<p>No matching restaurants found.</p>';
-      } else {
-          restaurants.forEach(restaurant => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          card.innerHTML = `
-            <a href="./single-restaurant.html?id=${restaurant.id}">
-              <img src="${restaurant.image}" alt="${restaurant.name}" />
-              <div class="card-info">
-                <div class="head">
-                  <h3>${restaurant.name}</h3>
-                  <p class="rate">${restaurant.rate} <i class="fa-regular fa-star"></i></p>
-                </div>
-                <p>${restaurant.location}</p>
-                <p>${restaurant.category}</p>
-              </div>
-            </a>
-          `;
-          restaurantListContainer.appendChild(card);
-        });
-    }
-  }
 
 
 
-
-
-
+  // Populate the restaurant list initially
+  //displayRestaurants(getFilteredRestaurants());
 
   // Add event listeners to checkboxes
   const checkboxes = document.querySelectorAll('#filterList input[type="checkbox"]');
@@ -166,7 +149,8 @@ function renderRestaurants( ) {
 
   function displayRestaurants() {
     const restaurants = JSON.parse(localStorage.getItem('restaurants')) || [];
-
+    console.log('load')
+    console.log(restaurants)
       const restaurantListContainer = document.getElementById('restaurantCards');
       restaurantListContainer.innerHTML = '';
       if (restaurants.length === 0) {
@@ -176,7 +160,7 @@ function renderRestaurants( ) {
           const card = document.createElement('div');
           card.classList.add('card');
           card.innerHTML = `
-           <a href="./single-restaurant.html?id=${restaurant.id}">
+          <a href="./single-restaurant.html?id=${restaurant.id}">
               <img src="${restaurant.image}" alt="${restaurant.name}" />
               <div class="card-info">
                 <div class="head">
