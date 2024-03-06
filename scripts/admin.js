@@ -22,7 +22,7 @@ function renderAdminRestaurants() {
         <div class="card-info">
           <div class="head">
             <h3>${restaurant.name}</h3>
-            <p>${restaurant.rate}</p>
+            <p class="rate">${restaurant.rate} <i class="fa-regular fa-star"></i></p>
           </div>
           <p>${restaurant.location}</p>
           <p>${restaurant.category}</p>
