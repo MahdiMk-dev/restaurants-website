@@ -47,7 +47,7 @@ img {
   height: 70px;
   position: fixed;
   top: 0px;
-  padding: 0 30px;
+  padding: 0 35px;
 }
 
 .navbar a {
@@ -67,6 +67,95 @@ img {
 .navbar .logo {
   font-weight: 400;
 }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+}
+
+.navbar .dropdown > a:hover {
+  border-bottom: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown .dropdown-menu li {
+  list-style-type: none;
+}
+
+.dropdown .dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+.dropdown-menu label {
+  color: #fff;
+  margin-left: 5px;
+}
+
+/* Styling for checkboxes */
+.dropdown-menu input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Sub-menu styles */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+}
+
+.dropdown-menu li .sub-menu {
+  display: none;
+}
+
+/* Show sub-menu on hover */
+.dropdown-menu li:hover .sub-menu {
+  display: block;
+}
+
 
 /* Header */
 
@@ -163,6 +252,16 @@ main h1 {
   display: flex;
   margin: 5px 0;
   font-size: 14px;
+}
+
+.rate {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
 }
 
 .footer {
