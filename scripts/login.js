@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const enteredUsername = document.querySelector('.form-container.sign-in input[type="text"]').value;
         const enteredPassword = document.querySelector('.form-container.sign-in input[type="password"]').value;
 
-        // Check if the admin checkbox is checked
         const isAdminLogin = adminCheckbox.checked;
 
         if (isAdminLogin) {
-            // Admin login
             const adminCredentials = { username: 'admin', password: 'admin123' };
 
             if (enteredUsername === adminCredentials.username && enteredPassword === adminCredentials.password) {
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Invalid admin credentials. Please try again.');
             }
         } else {
-            // Regular user login
             const storedUser = JSON.parse(localStorage.getItem('user'));
 
             if (storedUser && enteredUsername === storedUser.username && enteredPassword === storedUser.password) {
