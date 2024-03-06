@@ -26,14 +26,15 @@
         </h1>
         <nav>
           <ul>
-            <li><a href="#">Users</a></li>
-            <li><a href="#">Restaurants</a></li>
+            <li><a href="./admin.html">Admin</a></li>
+            <li><a href="./admin-users.html">Users</a></li>
+            <li><a href="./admin-resturants.html">Restaurants</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main class="flex">
       <div class="form-container">
         <label for="restoName">Restaurant Name:</label>
         <input
@@ -45,7 +46,7 @@
 
         <label for="rate">Rate:</label>
         <input
-          type="text"
+          type="number"
           id="rate"
           placeholder="Enter Rate"
           required
@@ -70,14 +71,52 @@
         <label for="restoImage">Restaurant Image</label>
         <input type="file" id="restoImage" required /><br /><br />
 
+        <div id="menuItems">
+          <label for="restoImage">Menu Items</label>
+        <div>
+          <span class="itemLabel">Item 1:</span>
+          <input type="text" class="menuItem" placeholder="Menu Item">
+          <input type="number" class="itemPrice" placeholder="Item Price">
+        </div>
+        </div>
+        <button id="addMenuItem">Add Menu Item</button>
+
         <button class="btn" id="addRestaurantBtn">Add Restaurant</button>
       </div>
 
-    <div class="admin-restaurants" id="restaurantCards">
-        <!-- Admin restaurant cards will be added here -->
+
+
+
+      <div class="form-container">
+        <label for="restoName">Users:</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter User Name"
+          required
+        /><br /><br />
+
+        <label for="rate">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+        /><br /><br />
+
+        <label for="location">Passwors</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+        /><br /><br />
+
+
+        <button class="btn" id="addUser">Add User</button>
       </div>
     </main>
 
-    <script src="../scripts/admin.js"></script>
+    <script src="../scripts/menu.js"></script>
   </body>
 </html>
