@@ -53,7 +53,7 @@ restaurants;
           const card = document.createElement('div');
           card.classList.add('card');
           card.innerHTML = `
-            <a href="#">
+          <a href="./single-restaurant.html?id=${restaurant.id}">
               <img src="${restaurant.image}" alt="${restaurant.name}" />
               <div class="card-info">
                 <div class="head">
@@ -160,7 +160,7 @@ searchInput.addEventListener('input', function(event) {
           const card = document.createElement('div');
           card.classList.add('card');
           card.innerHTML = `
-            <a href="../pages/single-restaurant.html">
+          <a href="./single-restaurant.html?id=${restaurant.id}">
               <img src="${restaurant.image}" alt="${restaurant.name}" />
               <div class="card-info">
                 <div class="head">

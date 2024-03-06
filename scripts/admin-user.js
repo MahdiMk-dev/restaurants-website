@@ -12,7 +12,6 @@ function renderAdminUsers() {
   }
 
   UserCardsContainer.innerHTML = '';
-  //console.log(users)
   if (Array.isArray(users)) {users.forEach(user => {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -26,8 +25,7 @@ function renderAdminUsers() {
           <button class="btn btn-remove" onclick="removeUser(${user.id})">Remove</button>
         </div>
     `;
-    //console.log(card)
-    //console.log(user)
+
     UserCardsContainer.appendChild(card);
   });
 } else {
@@ -43,8 +41,7 @@ function renderAdminUsers() {
           <button class="btn btn-remove" onclick="removeUser(${users.id})">Remove</button>
         </div>
     `;
-    //console.log(card)
-    //console.log(user)
+
     UserCardsContainer.appendChild(card);
 }
 }
@@ -65,8 +62,7 @@ function loadUsers() {
   const storedUsers = localStorage.getItem('user');
   if (storedUsers) {
     users = JSON.parse(storedUsers);
-    //console.log(users)
-    //console.log('logs')
+
     renderAdminUsers();
     console.log(users)
   }

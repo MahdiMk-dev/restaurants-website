@@ -20,9 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Invalid admin credentials. Please try again.');
             }
         } else {
-            const storedUser = JSON.parse(localStorage.getItem('user'));
+            // Regular user login
+function loadUsers() {
+  const storedUsers = localStorage.getItem('user');
+  if (storedUsers) {
+    users = JSON.parse(storedUsers);
 
-            if (storedUser && enteredUsername === storedUser.username && enteredPassword === storedUser.password) {
+    console.log(users)
+  }
+}
+
+loadUsers();
+user=users.find(user => user.username === enteredUsername)
+
+            if (users && enteredUsername === user.username && enteredPassword === user.password) {
                 alert('Login successful!');
                 window.location.href = "../pages/main.html";
             } else {

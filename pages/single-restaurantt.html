@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/single-restaurant.css" />
     <link rel="stylesheet" href="../styles/utilities.css" />
-    
-    <title>Resto Site | Home</title>
+    <title>Single Restaurant Page</title>
   </head>
   <body>
-    <header class="hero">
+    <header class="single">
       <div class="navbar">
         <h1 class="logo">
           <span class="text-primary"
@@ -23,43 +22,33 @@
             <li><a href="main.html">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="./main.html">Restaurants</a></li>
-            <li>
-              <input type="text" id="search" name="search">
-              <label for="lname">search</label>
-            </li>
           </ul>
         </nav>
-      </div>
-
-      <div class="content">
-        <h1>Resto Site</h1>
-        <p>Find the best restaurants, cafés and bars in Lebanon</p>
-        <a href="pages/about.html" class="btn"
-          ><i class="fas fa-chevron-right"></i> Read More</a
-        >
       </div>
     </header>
 
     <main>
-      <h1>Trending dining restaurants in Lebanon</h1>
-
-      <div class="restaurants-cards" id="restaurantCards">
-
-        <!-- <div class="card">
-          <a href="#"
-            ><img src="images/hero.jfif" alt="" />
-            <div class="card-info">
-              <div class="head">
-                <h3>Resto Name</h3>
-                <p>rate</p>
-              </div>
-              <p>Location</p>
-              <p>Category</p>
-            </div></a
-          >
-        </div> -->
+      <div class="single-resto-card">
+        <a href="#">
+          <img src="../images/hero.jpg" alt="" />
+          <div class="card-info">
+            <div class="head">
+              <h3>restaurant.name</h3>
+              <p class="rate">4 <i class="fa-regular fa-star"></i></p>
+            </div>
+            <p>restaurant.location</p>
+            <p>restaurant.category</p>
+            <p>restaurant.menu</p>
+            <div class="photo-gallery">
+              <img src="../images/hero.jpg" alt="Image 1" />
+              <img src="../images/hero.jpg" alt="Image 2" />
+              <img src="../images/hero.jpg" alt="Image 3" />
+            </div>
+          </div>
+        </a>
       </div>
     </main>
+
     <footer class="footer">
       <div class="social">
         <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
@@ -69,8 +58,7 @@
       </div>
       <p>Copyright &copy; 2024 - Resto Site</p>
     </footer>
-    
-    <script src="../scripts/main.js"></script>
 
+    <script src="../scripts/main.js"></script>
   </body>
 </html>

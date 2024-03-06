@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (storedUsers) {
          
           users = JSON.parse(storedUsers);
-            if (!Array.isArray(users))
+            if (!Array.isArray(users))//to avoid dealing with users as an object when it contains one item only, force array form
             users=[users]
         }
         else users=[];
@@ -34,14 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('user', JSON.stringify(users));
 
         alert('Signup successful!');
-        const storedUserss = localStorage.getItem('user');
-        if (storedUserss) {
-         
-          users = JSON.parse(storedUserss);
-            if (!Array.isArray(users))
-            users=[users]
-        }
-        else userss=[];
+
 
         window.location.href = "./pages/main.html";
 
