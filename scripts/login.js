@@ -1,25 +1,36 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Add an event listener to the login button
-    document.getElementById("loginbtn").addEventListener("click", login);
-function login() {
-    let username = document.getElementById("loginUsername").value;
-    let password = document.getElementById("loginPassword").value;
-    console.log(username)
-    console.log(password)
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+document.addEventListener('DOMContentLoaded', function () {
+    const signInForm = document.querySelector('.form-container.sign-in form');
+    const adminCheckbox = document.getElementById('adminCheckbox');
 
-    let user = users.find(u => u.username === username && u.password === password);
-    console.log(u.username)
-    console.log(u.password)
-    if (user) {
-        console.log("success")
-        alert("Login successful!");
-        window.location.href = "../main.html";
+    signInForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    } else {
-        console.log("failed")
+        const enteredUsername = document.querySelector('.form-container.sign-in input[type="text"]').value;
+        const enteredPassword = document.querySelector('.form-container.sign-in input[type="password"]').value;
 
-        alert("Invalid username or password. Please try again.");
-    }
-}
-})
+        // Check if the admin checkbox is checked
+        const isAdminLogin = adminCheckbox.checked;
+
+        if (isAdminLogin) {
+            // Admin login
+            const adminCredentials = { username: 'admin', password: 'admin123' };
+
+            if (enteredUsername === adminCredentials.username && enteredPassword === adminCredentials.password) {
+                alert('Admin Login successful!');
+                window.location.href = "../pages/admin.html";
+            } else {
+                alert('Invalid admin credentials. Please try again.');
+            }
+        } else {
+            // Regular user login
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser && enteredUsername === storedUser.username && enteredPassword === storedUser.password) {
+                alert('Login successful!');
+                window.location.href = "../pages/main.html";
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    });
+});
