@@ -55,7 +55,7 @@ function addRestaurant() {
     const categoryInput = document.getElementById('category');
     const restoImageInput = document.getElementById('restoImage');
   
-    const name = restoNameInput.value.trim();
+    const name = restoNameInput.value.trim();//trim to remove white spaces before or after
     const rate = rateInput.value.trim();
     const location = locationInput.value.trim();
     const category = categoryInput.value.trim();
