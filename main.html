@@ -26,10 +26,28 @@
         <nav>
           <ul>
             <li><a href="main.html">Home</a></li>
-            <li><a href="pages/about.html">About Us</a></li>
             <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+            <li class="dropdown">
+              <a href="#">Filter <i class="fa-solid fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Category <i class="fas fa-chevron-right"></i></a>
+                  <ul class="sub-menu">
+                    <li><input type="checkbox" id="category1" name="category" value="category1"><label for="category1">Category 1</label></li>
+                    <li><input type="checkbox" id="category2" name="category" value="category2"><label for="category2">Category 2</label></li>
+                    <li><input type="checkbox" id="category3" name="category" value="category3"><label for="category3">Category 3</label></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Location <i class="fas fa-chevron-right"></i></a>
+                  <ul class="sub-menu">
+                    <li><input type="checkbox" id="location1" name="location" value="location1"><label for="location1">Location 1</label></li>
+                    <li><input type="checkbox" id="location2" name="location" value="location2"><label for="location2">Location 2</label></li>
+                    <li><input type="checkbox" id="location3" name="location" value="location3"><label for="location3">Location 3</label></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
             <li>
               <a href="#"
                 >Search <i class="fa-solid fa-magnifying-glass"></i
