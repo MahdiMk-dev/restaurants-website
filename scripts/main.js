@@ -70,25 +70,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
       mainRestaurantCardsContainer.innerHTML = '';
 
-      restaurants.forEach(restaurant => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          card.innerHTML = `
-              <a href="#">
-                  <img src="${restaurant.image}" alt="${restaurant.name}" />
-                  <div class="card-info">
-                      <div class="head">
-                          <h3>${restaurant.name}</h3>
-                          <p>${restaurant.rate}</p>
-                      </div>
-                      <p>${restaurant.location}</p>
-                      <p>${restaurant.category}</p>
-                  </div>
-              </a>
-          `;
-          mainRestaurantCardsContainer.appendChild(card);
-      });
-  }
+  restaurants.forEach(restaurant => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <a href="#">
+        <img src="${restaurant.image}" alt="${restaurant.name}" />
+        <div class="card-info">
+          <div class="head">
+            <h3>${restaurant.name}</h3>
+            <p>${restaurant.rate}</p>
+          </div>
+          <p>${restaurant.location}</p>
+          <p>${restaurant.category}</p>
+        </div>
+      </a>
+    `;
+    restaurantCardsContainer.appendChild(card);
+  });
+}
 
   // Call the render function initially
   renderMainRestaurants();
