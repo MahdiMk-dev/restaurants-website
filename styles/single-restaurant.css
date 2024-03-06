@@ -289,3 +289,54 @@ main {
 .footer .social > * {
   margin-right: 30px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+  }
+
+  .navbar.open ul li {
+    margin: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid #28a745;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  .single-resto-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-info h3 {
+    font-size: 24px;
+  }
+
+  .photo-gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
