@@ -88,11 +88,6 @@ img {
   width: 115px;
 }
 
-/* Styling for checkboxes */
-.dropdown-menu input[type="checkbox"] {
-  margin-right: 5px;
-}
-
 /* Sub-menu styles */
 .sub-menu {
   display: none;
@@ -115,7 +110,6 @@ img {
 .dropdown-menu li:hover .sub-menu {
   display: block;
 }
-
 
 /* Header */
 
@@ -248,7 +242,6 @@ main h1 {
   margin-right: 30px;
 }
 
-
 @media screen and (max-width: 835px) {
   .navbar {
     padding: 0 10px;
@@ -303,8 +296,6 @@ main h1 {
 }
 
 @media screen and (max-width: 576px) {
-  
-
   .content h1 {
     font-size: 35px;
   }

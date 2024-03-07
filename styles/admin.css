@@ -17,7 +17,7 @@ body {
 }
 
 main {
-    padding: 100px;
+  padding: 100px;
 }
 
 .form-container {
@@ -44,7 +44,7 @@ input {
 }
 
 .admin-restaurants {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 button.btn {
@@ -59,10 +59,9 @@ button.btn {
 .btn-remove {
   background-color: red;
 }
-.form-container{
+.form-container {
   min-width: 500px;
 }
-
 
 /* Your existing CSS */
 
@@ -114,8 +113,6 @@ button.btn {
     width: 100%;
   }
 }
-
-/* Your existing CSS */
 
 /* Responsive styles for phones */
 @media screen and (max-width: 480px) {

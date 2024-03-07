@@ -114,7 +114,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-img{
+img {
   max-width: 500px;
   max-height: 500px;
 }
@@ -152,7 +152,6 @@ img{
 .footer .social > * {
   margin-right: 30px;
 }
-
 
 @media screen and (max-width: 768px) {
   .navbar {
