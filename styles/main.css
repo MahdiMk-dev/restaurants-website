@@ -68,64 +68,24 @@ img {
   font-weight: 400;
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown .dropdown-menu {
-  display: none;
-  position: absolute;
-  background: #333;
-  padding: 10px;
+#search {
+  padding: 3px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  top: 100%;
-  left: 0;
+  width: 200px;
+  margin-right: 10px;
 }
 
-.navbar .dropdown > a:hover {
-  border-bottom: none;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown .dropdown-menu li {
-  list-style-type: none;
-}
-
-.dropdown .dropdown-menu a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: 5px 0;
-}
-
-/* Dropdown styles */
-.dropdown {
+.select-container {
   position: relative;
+  margin-right: 10px;
 }
 
-.dropdown .dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 4px;
-  z-index: 1;
-  list-style-type: none;
-  margin: 0;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown-menu li {
-  margin-bottom: 5px;
-}
-
-.dropdown-menu label {
-  color: #fff;
-  margin-left: 5px;
+.select-container select {
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 115px;
 }
 
 /* Styling for checkboxes */
