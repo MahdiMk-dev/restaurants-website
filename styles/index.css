@@ -112,3 +112,32 @@ body {
     text-decoration: underline;
   }
   
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group input {
+    width: 300px;
+    font-size: 14px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .remember label {
+    font-size: 12px;
+  }
+
+  button {
+    width: 300px;
+    font-size: 14px;
+  }
+}

@@ -287,3 +287,83 @@ main h1 {
 .footer .social > * {
   margin-right: 30px;
 }
+
+
+@media screen and (max-width: 835px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+  }
+
+  .navbar.open ul li {
+    margin: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid #28a745;
+  }
+
+  .hero .content h1 {
+    font-size: 45px;
+  }
+
+  .hero .content p {
+    font-size: 20px;
+  }
+
+  main h1 {
+    font-size: 30px;
+  }
+
+  .restaurants-cards,
+  .admin-restaurants {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  
+
+  .content h1 {
+    font-size: 35px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  main h1 {
+    font-size: 25px;
+  }
+
+  .restaurants-cards,
+  .admin-restaurants {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
