@@ -129,10 +129,8 @@ function addRestaurant() {
   }
   function loadRestaurants() {
     const storedRestaurants = localStorage.getItem('restaurants');
-    console.log(storedRestaurants)
     if (storedRestaurants) {
       restaurants = JSON.parse(storedRestaurants);
-      console.log(restaurants)
     }
   }
   
@@ -154,9 +152,7 @@ function addUser() {
     }
         if (!Array.isArray(users))
       users=[users]
-    console.log(users)
     const existingUser = users.find(user => user.username === username);
-    console.log(existingUser)
     if (existingUser) {
       alert('Username already exists. Please choose a different one.');
       return;

@@ -8,12 +8,9 @@ function renderAdminRestaurants() {
   }
 
   restaurantCardsContainer.innerHTML = '';
-  console.log('bla')
-  console.log(restaurants)
   restaurants.forEach(restaurant => {
     const card = document.createElement('div');
     card.classList.add('card');
-    console.log(restaurants)
     card.innerHTML = `
       <a href="#">
         <img src="${restaurant.image}" alt="${restaurant.name}" />

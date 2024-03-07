@@ -12,7 +12,6 @@ if (restaurantsJson) {
   }
   const restaurant = findRestaurantById(id);
   
-  console.log(restaurants)
 
   if (restaurant) {
   	const restaurantListContainer = document.getElementById('single-resto-card');
